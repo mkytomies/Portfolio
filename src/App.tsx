@@ -1,10 +1,32 @@
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Root from "./pages/Root";
+import Home from "./pages/Home";
+import Portfolio from "./pages/Portfolio";
+
 import './App.css'
+
+let router = createBrowserRouter([
+  {
+    path: "/",
+    Component: Root,
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: "/portfolio",
+        Component: Portfolio,
+      }
+    ]
+  }
+])
 
 function App() {
 
   return (
     <>
-      
+      <RouterProvider router={router} />
     </>
   )
 }
