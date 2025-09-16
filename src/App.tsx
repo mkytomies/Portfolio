@@ -3,7 +3,7 @@ import Root from "./pages/Root";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 
-import './App.css'
+import './App.css';
 
 let router = createBrowserRouter([
   {
