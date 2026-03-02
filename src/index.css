@@ -20,20 +20,42 @@ body {
 }
 
 .mainContainer {
-  width: 60%;
+  width: 55%;
   padding: 4rem;
+  padding-right: 6vw;
   position: absolute;
   right: 0;
 }
 
 h1 {
-  color: #38C34D;
-  font-size: 70px;
+  color: #5FDC0C;
+  font-size: 60px;
   text-align: right;
   margin-bottom: 0;
 }
 
 h2 {
-  color: #38C34D;
-  font-size: 40px;
+  color: #5FDC0C;
+  font-size: 36px;
+  line-height: 36px;
+  padding-top: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .mainContainer {
+    width: 75%;
+    padding: 2rem;
+  }
 }

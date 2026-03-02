@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import "./styles/Navigation.css"
 
 const Navigation = () => {
+
     return(
         <>
             <div className="headerDiv">

@@ -1,7 +1,14 @@
+import ProjectTile from "../components/ProjectTile";
+
 const Portfolio = () => {
     return(
         <>
-            <h1>Portfolio</h1>
+            <div className="mainContainer">
+                <h1>Portfolio</h1>
+                <ProjectTile />
+                <ProjectTile />
+                <ProjectTile />
+            </div>
         </>
     )
 }

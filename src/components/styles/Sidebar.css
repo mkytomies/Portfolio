@@ -1,0 +1,58 @@
+.sidebarContainer {
+    width: 30%;
+    height: auto; 
+    display: flex;
+    color: #000;
+    position: absolute;
+    z-index: 100;
+}
+
+.sidebar {
+    background-color: #FFFF;
+    padding-bottom: 50vw;
+}
+
+.sidebarSmallTitle {
+    font-weight: 700;
+}
+
+.contactColumn {
+    padding-left: 5vw;
+    width: 60%;
+}
+
+.skillsColumn {
+    padding-top: 2rem;
+    padding-left: 5vw;
+    width: 60%;
+}
+
+.arrow {
+    visibility: hidden;
+    left: 100%;
+}
+
+@media (max-width: 600px) {
+    .sidebarContainer {
+        width: 80%!important;
+    }
+
+    .sidebar {
+        padding-left: 1rem;
+        padding-bottom: 300vw;
+    }
+
+    .arrow {
+        visibility: visible;
+        top: 85vw;
+        position: absolute;
+    }
+
+    .contactColumn {
+        width: 80%;
+    }
+
+    .skillsColumn {
+        width: 80%;
+    }
+}

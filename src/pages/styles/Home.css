@@ -6,7 +6,7 @@
 
 .bodyText {
     text-align: left;
-    width: 60%;
+    width: 80%;
     margin-top: 0;
     font-size: 20px;
 }
@@ -19,5 +19,24 @@
 
 ul {
     font-size: 20px;
-    width: 60%;
+    width: 80%;
 }
+
+ @media (max-width: 600px) {
+    .title {
+        font-size: 24px;
+    }
+
+    .bodyText {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .bolded {
+        font-size: 20px;
+    }
+
+    ul {
+        font-size: 16px;
+    }
+ }
