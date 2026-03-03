@@ -1,6 +1,5 @@
-import { Link } from 'react-router';
-
 import './styles/ProjectTile.css';
+import Button from './Button';
 
 type ProjectTileProps = {
     name: string;
@@ -20,8 +19,8 @@ const ProjectTile = ({name, image, description, gitHub, figma}: ProjectTileProps
                     <h2 className='projectName'>{name}</h2>
                     <p className='projectDescription'>{description}</p>
                     <div className='buttons'>
-                        <Link className='button' to={gitHub}>GitHub</Link>
-                        {figma ? <Link className='button' to={figma}>Figma</Link> : null}
+                        <Button label='GitHub' to={gitHub} />
+                        {figma ? <Button label='Figma' to={figma} />: null}
                     </div>
                 </div>
             </div>
