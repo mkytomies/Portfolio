@@ -13,8 +13,8 @@ const ProjectTile = ({name, image, description, gitHub, figma}: ProjectTileProps
 
     return(
         <>
-            <div className="projectTile">
-                <img className='projectImage' src={image}/>
+            <div className="projectTile" data-testid="projectTile">
+                <img className='projectImage' src={image} data-testid="projectImage" />
                 <div className='projectDetails'>
                     <h2 className='projectName'>{name}</h2>
                     <p className='projectDescription'>{description}</p>
