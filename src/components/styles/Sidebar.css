@@ -28,7 +28,6 @@
 }
 
 .arrow {
-    visibility: hidden;
     left: 100%;
 }
 
@@ -43,7 +42,6 @@
     }
 
     .arrow {
-        visibility: visible;
         top: 85vw;
         position: absolute;
     }

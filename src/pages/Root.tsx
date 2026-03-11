@@ -5,9 +5,9 @@ import Sidebar from "../components/Sidebar";
 const Root = () => {
     return(
         <>
-            <Sidebar />
-            <Navigation />
-            <Outlet />
+            <Sidebar data-testid="sidebar" />
+            <Navigation data-testid="nav" />
+            <Outlet data-testid="outlet" />
         </>
     )
 }

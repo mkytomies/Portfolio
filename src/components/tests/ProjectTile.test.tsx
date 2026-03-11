@@ -24,7 +24,22 @@ test('Render project tile', () => {
     const projectTile = screen.getByTestId("projectTile");
     const projectImage = screen.getByTestId('projectImage');
     expect(projectTile).toBeInTheDocument();
-    expect(screen.getByText(name).textContent).toMatch(name);
-    expect(projectImage.getAttribute('src')).toContain(image);
+    expect(screen.getByText(name).textContent).toBe(name);
+    expect(projectImage.getAttribute('src')).toBe(image);
     expect(screen.getByText(description).textContent).toMatch(description);
+});
+
+test('No Figma link displayed when project does not have one', () => {
+    render(
+        <MemoryRouter>
+            <ProjectTile 
+                name={name}
+                image={image}
+                description={description}
+                gitHub={gitHub}
+            />
+        </MemoryRouter>
+    );
+
+    expect(screen.queryByText('Figma')).not.toBeInTheDocument();
 });

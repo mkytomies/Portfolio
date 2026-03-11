@@ -18,7 +18,7 @@ const ProjectTile = ({name, image, description, gitHub, figma}: ProjectTileProps
                 <div className='projectDetails'>
                     <h2 className='projectName'>{name}</h2>
                     <p className='projectDescription'>{description}</p>
-                    <div className='buttons'>
+                    <div className='buttons' data-testid='buttons'>
                         <Button label='GitHub' to={gitHub} />
                         {figma ? <Button label='Figma' to={figma} />: null}
                     </div>

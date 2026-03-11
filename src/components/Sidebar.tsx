@@ -2,16 +2,13 @@ import './styles/Sidebar.css';
 import arrowRight from '../assets/arrow_right.png';
 import { useEffect, useState } from 'react';
 
+
 const Sidebar = () => {
     const [sidebarOpen, setSidebarOpen] = useState(true);
-    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const handleWindowResize = () => {
             const mobile = window.innerWidth <= 600;
-            const height = window.innerHeight;
-
-            setIsMobile(mobile);
             setSidebarOpen(!mobile);
         };
 
@@ -30,8 +27,8 @@ const Sidebar = () => {
 
     return (
         <>
-            <div className="sidebarContainer" style={{left: sidebarOpen ? 0 : "-74%"}}>
-                <div className="sidebar">
+            <div className="sidebarContainer" data-testid='sidebarContainer' style={{left: sidebarOpen ? 0 : "-74%"}}>
+                <div className="sidebar" data-testid='sidebar'>
                     <div className='skillsColumn'>
                         <h2>Skills</h2>
                         <p className="sidebarSmallTitle">Programming</p>
@@ -59,9 +56,11 @@ const Sidebar = () => {
                     onClick={handleSidebar} 
                     style={{
                         rotate: sidebarOpen ? '180deg' : '0deg',
+                        visibility: innerWidth < 600 ? 'visible' : 'hidden'
                     }}
+                    data-testid='arrow'
                 >
-                    <img src={arrowRight} alt="Right arrow" />
+                    <img src={arrowRight} alt={sidebarOpen ? "Left pointing arrow" : "Right pointing arrow"} />
                 </div>
             </div>
         </>
