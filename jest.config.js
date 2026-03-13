@@ -6,6 +6,6 @@ export default {
     "^.+\\.(ts|tsx)$": "ts-jest"
   },
   moduleNameMapper: {
-    '^.+\\.(css|png)$': '<rootDir>/styleMock.js',
+    '^.+\\.(css|png|jpg)$': '<rootDir>/styleMock.js',
   }
 };
