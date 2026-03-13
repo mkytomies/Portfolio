@@ -1,11 +1,6 @@
-import ContactForm from '../components/ContactForm';
 import './styles/Home.css';
 
 const Home = () => {
-
-    const sendEmail = () => {
-        console.log("submitted");
-    }
 
     return(
         <>
@@ -42,8 +37,6 @@ const Home = () => {
                     <li>Moved from graphic design into WordPress development (Divi) </li>
                     <li>Gained hands-on experience creating and maintaining websites, working in close collaboration with the designer</li>
                 </ul>
-                <h2>Contact</h2>
-                <ContactForm onSubmit={sendEmail} />
             </div>
         </>
     )
