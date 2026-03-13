@@ -4,10 +4,11 @@
     padding: 0;
     width: 100%;
     height: 140px;
+    display: flex;
+    flex-direction: row;
 }
 
 .list {
-    visibility: visible;
     margin-block-start: 0em;
     padding-top: 2rem;
     padding-right: 4rem;
@@ -27,21 +28,43 @@
     font-weight: 700;
 }
 
+.list a:hover {
+    border-bottom: 4px solid #5FDC0C!important;
+}
+
+.hamburger {
+    visibility: hidden;
+}
+
 @media (max-width: 600px) {
     .headerDiv {
         height: 80px!important;
     }
 
     .list {
-        gap: 0.5rem;
+        background: linear-gradient(180deg, #000, #151515);
+        gap: 0.8rem;
         text-align: right;
-        padding-right: 2rem;
-        visibility: visible;
-        justify-content: space-between;
-        width: 60%;
+        padding: 4.3rem 2rem;
+        flex-direction: column;
+        width: 80%;
+        z-index: 90;
     }
 
     .list a {
         font-size: 22px;
+    }
+
+    .list a:hover {
+        border-bottom: none;
+    }
+
+    .hamburger {
+        visibility: visible;
+        position: absolute;
+        right: 0;
+        padding-top: 1.5rem;
+        padding-right: 1.8rem;
+        z-index: 100;
     }
 }

@@ -1,18 +1,52 @@
 import { Link } from "react-router";
+import { useEffect, useState } from "react";
+import "./styles/Navigation.css";
 
-import "./styles/Navigation.css"
+import hamburger from '../assets/hamburger.png';
+import close from '../assets/close.png';
 
 const Navigation = () => {
+    const [activeItem, setActiveItem] = useState(window.location.pathname);
+    const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
+
+    const handleActiveItem = () => {
+        if(activeItem === '/') {
+            setActiveItem('/portfolio');
+        } else {
+            setActiveItem('/');
+        }
+        setMobileNavIsOpen(false);
+    };
+
+    useEffect(() => {
+        const handleWindowResize = () => {
+            const mobile = window.innerWidth <= 600;
+            setMobileNavIsOpen(!mobile);
+        };
+
+        handleWindowResize();
+
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    }, []);
+
+    const handleMobileNav = () => {
+        setMobileNavIsOpen(prev => !prev);
+    };
 
     return(
         <>
             <div className="headerDiv">
-                <nav>
+                <nav role="navigation" style={{visibility: mobileNavIsOpen ? 'visible' : 'hidden'}}>
                     <ul className="list">
-                        <li><Link to={'/'}>Home</Link></li>
-                        <li><Link to={'/portfolio'}>Portfolio</Link></li>
+                        <li><Link to={'/'} onClick={handleActiveItem} style={{borderBottom: activeItem === '/' ? '4px solid #5FDC0C' : 'none'}}>Home</Link></li>
+                        <li><Link to={'/portfolio'} onClick={handleActiveItem} style={{borderBottom: activeItem === '/portfolio' ? '4px solid #5FDC0C' : 'none'}}>Portfolio</Link></li>
                     </ul>
                 </nav>
+                <img onClick={handleMobileNav} src={mobileNavIsOpen ? close : hamburger} className="hamburger" alt={mobileNavIsOpen ? 'x icon' : 'hamburger icon'} />
             </div>
         </>
     )
