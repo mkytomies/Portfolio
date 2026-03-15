@@ -2,17 +2,29 @@ import './styles/Sidebar.css';
 import arrowRight from '../assets/arrow_right.png';
 import { useEffect, useState } from 'react';
 
+const getLeftValue = (width: number) => {
+    if(width >= 577 && width <= 768) return '-44%';
+    if(width <= 576) return '-74%';
+    return '0';
+};
+
 
 const Sidebar = () => {
-    const [sidebarOpen, setSidebarOpen] = useState(true);
+    const initialWidth = window.innerWidth;
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [sidebarOpen, setSidebarOpen] = useState(initialWidth > 768);
+    const [leftValue, setLeftValue] = useState(getLeftValue(initialWidth));
 
     useEffect(() => {
         const handleWindowResize = () => {
-            const mobile = window.innerWidth <= 600;
+            const width = window.innerWidth;
+            const mobile = width <= 768;
+
+            setIsMobile(mobile);
+            setLeftValue(getLeftValue(width));
             setSidebarOpen(!mobile);
         };
-
-        handleWindowResize();
 
         window.addEventListener('resize', handleWindowResize);
 
@@ -27,7 +39,7 @@ const Sidebar = () => {
 
     return (
         <>
-            <div className="sidebarContainer" data-testid='sidebarContainer' style={{left: sidebarOpen ? 0 : "-74%"}}>
+            <div className="sidebarContainer" data-testid='sidebarContainer' style={{left: sidebarOpen ? 0 : leftValue}}>
                 <div className="sidebar" data-testid='sidebar'>
                     <div className='skillsColumn'>
                         <h2>Skills</h2>
@@ -42,21 +54,18 @@ const Sidebar = () => {
                     </div>
                     
                     <div className='contactColumn'>
-                        <h2>Contact <br />& Socials</h2>
-                        <p className="sidebarSmallTitle">GitHub</p>
-                        <p className='info'>mkytomies</p>
-                        <p className="sidebarSmallTitle">Figma</p>
+                        <h2>Contact & Socials</h2>
+                        <p className="sidebarSmallTitle">GitHub & Figma</p>
                         <p className='info'>mkytomies</p>
                         <p className="sidebarSmallTitle">Email</p>
                         <p className='info'>moonakytomies@gmail.com</p>
                     </div>
                 </div>
-                <div className="green" />
                 <div className='arrow' 
                     onClick={handleSidebar} 
                     style={{
                         rotate: sidebarOpen ? '180deg' : '0deg',
-                        visibility: innerWidth < 600 ? 'visible' : 'hidden'
+                        visibility: isMobile ? 'visible' : 'hidden'
                     }}
                     data-testid='arrow'
                 >

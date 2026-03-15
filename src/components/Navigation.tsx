@@ -9,12 +9,8 @@ const Navigation = () => {
     const [activeItem, setActiveItem] = useState(window.location.pathname);
     const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
 
-    const handleActiveItem = () => {
-        if(activeItem === '/') {
-            setActiveItem('/portfolio');
-        } else {
-            setActiveItem('/');
-        }
+    const handleActiveItem = (clickedItem: string) => {
+        setActiveItem(clickedItem);
         setMobileNavIsOpen(false);
     };
 
@@ -40,10 +36,10 @@ const Navigation = () => {
     return(
         <>
             <div className="headerDiv">
-                <nav role="navigation" style={{visibility: mobileNavIsOpen ? 'visible' : 'hidden'}}>
+                <nav role="navigation" style={{visibility: mobileNavIsOpen || window.innerWidth > 600 ? 'visible' : 'hidden'}}>
                     <ul className="list">
-                        <li><Link to={'/'} onClick={handleActiveItem} style={{borderBottom: activeItem === '/' ? '4px solid #5FDC0C' : 'none'}}>Home</Link></li>
-                        <li><Link to={'/portfolio'} onClick={handleActiveItem} style={{borderBottom: activeItem === '/portfolio' ? '4px solid #5FDC0C' : 'none'}}>Portfolio</Link></li>
+                        <li><Link to={'/'} onClick={() => {handleActiveItem('/')}} style={{borderBottom: activeItem === '/' ? '4px solid #5FDC0C' : 'none'}}>Home</Link></li>
+                        <li><Link to={'/portfolio'} onClick={() => {handleActiveItem('/portfolio')}} style={{borderBottom: activeItem === '/portfolio' ? '4px solid #5FDC0C' : 'none'}}>Portfolio</Link></li>
                     </ul>
                 </nav>
                 <img onClick={handleMobileNav} src={mobileNavIsOpen ? close : hamburger} className="hamburger" alt={mobileNavIsOpen ? 'x icon' : 'hamburger icon'} />

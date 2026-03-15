@@ -1,15 +1,16 @@
 .sidebarContainer {
     width: 30%;
-    height: auto; 
+    height: 100%; 
     display: flex;
     color: #000;
-    position: absolute;
+    background-color: #FFFF;
+    position: fixed;
     z-index: 100;
 }
 
 .sidebar {
-    background-color: #FFFF;
-    padding-bottom: 50vw;
+    overflow-y: auto;
+    padding-left: 5vw;
 }
 
 .sidebarSmallTitle {
@@ -17,33 +18,27 @@
 }
 
 .contactColumn {
-    padding-left: 5vw;
+    padding-bottom: 2rem;
     width: 60%;
 }
 
 .skillsColumn {
-    padding-top: 2rem;
-    padding-left: 5vw;
     width: 60%;
 }
 
 .arrow {
-    left: 100%;
+    position: absolute;
 }
 
-@media (max-width: 600px) {
+
+/*Mobile*/
+@media (max-width: 576px) {
     .sidebarContainer {
-        width: 80%!important;
+        width: 80%;
     }
 
     .sidebar {
-        padding-left: 1rem;
-        padding-bottom: 300vw;
-    }
-
-    .arrow {
-        top: 85vw;
-        position: absolute;
+        padding-left: 2rem;
     }
 
     .contactColumn {
@@ -52,5 +47,68 @@
 
     .skillsColumn {
         width: 80%;
+        padding-top: 2rem;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .sidebarSmallTitle {
+        font-size: 16px;
+    }
+
+    .info {
+        font-size: 14px;
+        margin-top: -10px;
+    }
+}
+
+/*Small tablets*/
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    .sidebarContainer {
+        width: 50%;
+    }
+}
+
+/*Large tablets*/
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .sidebarContainer {
+        width: 35%;
+    }
+}
+
+/*Small desktops*/
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .skillsColumn {
+        padding-top: 0;
+    }
+}
+
+/*Large desktops*/
+@media only screen and (min-width: 1490px) {
+    .sidebar {
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1150px) {
+    .sidebarContainer {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .sidebar {
+        margin: auto;
+    }
+
+    .arrow {
+        left: 100%;
+        top: 50%;
     }
 }

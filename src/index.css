@@ -45,7 +45,8 @@ a {
     text-decoration: none;
 }
 
-@media (max-width: 600px) {
+/*Mobile*/
+@media (max-width: 576px) {
   h1 {
     font-size: 32px;
   }
@@ -58,4 +59,28 @@ a {
     width: 75%;
     padding: 2rem;
   }
+}
+
+/*Small tablets*/
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .mainContainer {
+    width: 70%;
+  }
+}
+
+/*Large tablets*/
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .mainContainer {
+      width: 52%;
+    }
+}
+
+/*Small desktops*/
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    
+}
+
+/*Large desktops*/
+@media only screen and (min-width: 1441px) {
+    
 }

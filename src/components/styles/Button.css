@@ -10,11 +10,32 @@
     margin-right: 15px;
 }
 
-@media (max-width: 600px) {
+/*Mobile*/
+@media (max-width: 576px) {
     .button {
         font-size: 1rem!important;
         padding: 10px 50px;
         margin-top: 15px!important;
         border-radius: 20px!important;
     }
+}
+
+/*Small tablets*/
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  
+}
+
+/*Large tablets*/
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    
+}
+
+/*Small desktops*/
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    
+}
+
+/*Large desktops*/
+@media only screen and (min-width: 1441px) {
+    
 }
