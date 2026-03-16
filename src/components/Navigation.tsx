@@ -35,14 +35,36 @@ const Navigation = () => {
 
     return(
         <>
-            <div className="headerDiv">
+            <div className="headerDiv" data-cy="headerDiv">
                 <nav role="navigation" style={{visibility: mobileNavIsOpen || window.innerWidth > 600 ? 'visible' : 'hidden'}}>
                     <ul className="list">
-                        <li><Link to={'/'} onClick={() => {handleActiveItem('/')}} style={{borderBottom: activeItem === '/' ? '4px solid #5FDC0C' : 'none'}}>Home</Link></li>
-                        <li><Link to={'/portfolio'} onClick={() => {handleActiveItem('/portfolio')}} style={{borderBottom: activeItem === '/portfolio' ? '4px solid #5FDC0C' : 'none'}}>Portfolio</Link></li>
+                        <li>
+                            <Link
+                                to={'/'}
+                                onClick={() => { handleActiveItem('/') }}
+                                style={{ borderBottom: activeItem === '/' ? '4px solid #5FDC0C' : 'none' }}
+                                data-cy="navHomeLink"
+                            >Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to={'/portfolio'}
+                                onClick={() => { handleActiveItem('/portfolio') }}
+                                style={{ borderBottom: activeItem === '/portfolio' ? '4px solid #5FDC0C' : 'none' }}
+                                data-cy="navPortfolioLink"
+                            >Portfolio
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
-                <img onClick={handleMobileNav} src={mobileNavIsOpen ? close : hamburger} className="hamburger" alt={mobileNavIsOpen ? 'x icon' : 'hamburger icon'} />
+                <img 
+                    onClick={handleMobileNav} 
+                    src={mobileNavIsOpen ? close : hamburger} 
+                    className="hamburger" 
+                    alt={mobileNavIsOpen ? 'x icon' : 'hamburger icon'} 
+                    data-cy="hamburger"
+                />
             </div>
         </>
     )

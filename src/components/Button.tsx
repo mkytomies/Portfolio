@@ -9,7 +9,7 @@ type ButtonProps = {
 const Button = ({label, to}: ButtonProps) => {
 
     return(
-        <Link role='link' className='button' to={to}>{label}</Link>
+        <Link role='link' className='button' to={to} data-cy="button">{label}</Link>
     )
 }
 
