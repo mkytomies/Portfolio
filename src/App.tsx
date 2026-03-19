@@ -6,7 +6,7 @@ import Portfolio from "./pages/Portfolio";
 import './App.css';
 import ErrorPage from "./pages/ErrorPage";
 
-let router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,

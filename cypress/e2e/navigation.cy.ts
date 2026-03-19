@@ -27,7 +27,7 @@ describe('Navigation', () => {
   it('should display error page and user can navigate back home', () => {
     cy.visit('/porrtfolio')
     cy.contains('Oops page not found!')
-    cy.contains('Back to Home').click
+    cy.contains('Back to Home').click()
     cy.url().should('contain', Cypress.config().baseUrl + '/')
   })
 })
