@@ -10,7 +10,7 @@ describe('Portfolio page', () => {
         cy.get('[data-cy="button"]').should('have.length', 5).should('be.visible')
     })
 
-    it('buttons', () => {
+    it('buttons are rendered correctly', () => {
         cy.visit('/portfolio')
         cy.get('[data-cy="button"]').filter(':contains("GitHub")').should('have.length', 3).should('have.attr', 'href').and('include', 'github.com')
         cy.get('[data-cy="button"]').filter(':contains("Figma")').should('have.length', 2).should('have.attr', 'href').and('include', 'figma.com')

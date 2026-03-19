@@ -1,6 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import Portfolio from "../Portfolio";
 import { MemoryRouter } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 
 describe('Portfolio page', () => {
     beforeEach(() => {
@@ -83,5 +84,19 @@ describe('Portfolio page', () => {
 
         expect(rdFigmaLink).toHaveAttribute('href', 'https://www.figma.com/community/file/1549140004070639607/reactdine');
         expect(lbFigmaLink).toHaveAttribute('href', 'https://www.figma.com/community/file/1549142127375815676/lockbox');
+    });
+
+    test('user can navigate project tile buttons with keyboard', async () => {
+        const projects = screen.getAllByRole('article');
+        const reactDineProject = projects[0];
+        const lockBoxProject = projects[1];
+
+        within(reactDineProject).getByRole('link', { name: /github/i }).focus();
+        await userEvent.tab();
+        expect(within(reactDineProject).getByRole('link', { name: /figma/i } )).toHaveFocus();
+        await userEvent.keyboard('{Shift>}{Tab}{/Shift}');
+        expect(within(reactDineProject).getByRole('link', { name: /github/i } )).toHaveFocus();
+        await userEvent.keyboard('{Tab}{Tab}');
+        expect(within(lockBoxProject).getByRole('link', { name: /github/i } )).toHaveFocus();
     });
 });

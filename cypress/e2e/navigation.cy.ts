@@ -24,7 +24,7 @@ describe('Navigation', () => {
     cy.get('nav').should('not.be.visible')
   })
 
-  it('should display error page and navigate back home', () => {
+  it('should display error page and user can navigate back home', () => {
     cy.visit('/porrtfolio')
     cy.contains('Oops page not found!')
     cy.contains('Back to Home').click

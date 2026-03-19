@@ -75,9 +75,10 @@ describe('Navigation bar on mobile', () => {
     });
 });
 
-//TO DO: 
-/*describe('Navigation is keyboard accessible', () => {
+describe('Navigation is keyboard accessible', () => {
     beforeEach(() => {
+        global.innerWidth = 1400;
+        global.dispatchEvent(new Event('resize'));
         render(
             <MemoryRouter>
                 <Navigation />
@@ -85,11 +86,12 @@ describe('Navigation bar on mobile', () => {
         );
     });
 
-    test('links are keyboard accessible', () => {
-
+    test('tab navigation moves through links', async () => {
+        await userEvent.tab();
+        expect(screen.getByText('Home')).toHaveFocus();
+        await userEvent.tab();
+        expect(screen.getByText('Portfolio')).toHaveFocus();
+        await userEvent.keyboard('{Shift>}{Tab}{/Shift}');
+        expect(screen.getByText('Home')).toHaveFocus();
     });
-
-    test('tab navigation moves through links', () => {
-
-    })
-});*/
+});
