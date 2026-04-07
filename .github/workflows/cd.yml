@@ -13,24 +13,24 @@ concurrency:
     cancel-in-progress: false
 
 jobs: 
-    deploy: 
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v5
-            - name: Setup Pages
-              uses: actions/configure-pages@v5
-            - name: Upload artifact
-              uses: actions/upload-pages-artifact@v4
-              with: 
-                path: "./dist"
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy@v4
-            - name: Report Status
-              run: |
-                echo "# Deployment status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
-                echo "Deployed ${{ github.ref }} to ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
+  deploy: 
+    environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v5
+        - name: Setup Pages
+          uses: actions/configure-pages@v5
+        - name: Upload artifact
+          uses: actions/upload-pages-artifact@v4
+          with: 
+            path: "./dist"
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy@v4
+        - name: Report Status
+          run: |
+            echo "# Deployment status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+            echo "Deployed ${{ github.ref }} to ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
