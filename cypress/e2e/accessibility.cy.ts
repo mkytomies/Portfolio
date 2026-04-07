@@ -5,6 +5,6 @@ describe('Accessibility', () => {
         cy.press(Cypress.Keyboard.Keys.TAB)
         cy.get('[data-cy="navPortfolioLink"]').should('have.focus')
         cy.press(Cypress.Keyboard.Keys.ENTER)
-        cy.url().should('contain', '/portfolio')
+        cy.url().should('contain', '/projects')
     })
 })

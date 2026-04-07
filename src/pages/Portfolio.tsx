@@ -52,7 +52,7 @@ const Portfolio = () => {
     return(
         <>
             <div className="mainContainer">
-                <h1>Portfolio</h1>
+                <h1>Projects</h1>
                 {projects.map(project => (
                     <ProjectTile key={project.name} {...project}/>
                 ))}

@@ -10,7 +10,7 @@ function LocationDisplay() {
 }
 
 describe('Navigation', () => {
-    test('from home to portfolio page', async () => {
+    test('from home to projects page', async () => {
         renderWithRouter(
             <>
                 <Navigation />
@@ -18,17 +18,17 @@ describe('Navigation', () => {
             </>
         );
 
-        await userEvent.click(screen.getByText('Portfolio'));
-        expect(screen.getByTestId('location')).toHaveTextContent('/portfolio');
+        await userEvent.click(screen.getByText('Projects'));
+        expect(screen.getByTestId('location')).toHaveTextContent('/projects');
     });
 
-    test('from portfolio to home page', async () => {
+    test('from projects to home page', async () => {
         renderWithRouter(
             <>
                 <Navigation />
                 <LocationDisplay />
             </>,
-            { route: '/portfolio' }
+            { route: '/projects' }
         );
 
         await userEvent.click(screen.getByText('Home'));
@@ -49,7 +49,7 @@ describe('Navigation', () => {
         const homeLinkStyles = getComputedStyle(homeLink);
         expect(homeLinkStyles.borderBottom).toContain('4px solid');
 
-        const portfolioLink = screen.getByText('Portfolio');
+        const portfolioLink = screen.getByText('Projects');
         const portfolioLikStyles = getComputedStyle(portfolioLink);
         expect(portfolioLikStyles.borderBottom).not.toContain('4px solid');
     });
@@ -66,8 +66,8 @@ describe('Navigation', () => {
         );
 
         await userEvent.click(screen.getByAltText('hamburger icon'));
-        await userEvent.click(screen.getByText('Portfolio'));
-        expect(screen.getByTestId('location')).toHaveTextContent('/portfolio');
+        await userEvent.click(screen.getByText('Projects'));
+        expect(screen.getByTestId('location')).toHaveTextContent('/projects');
 
         const mobileNav = screen.getByRole('navigation', { hidden: true });
         const styles = getComputedStyle(mobileNav);

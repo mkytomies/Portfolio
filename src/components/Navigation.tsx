@@ -49,11 +49,11 @@ const Navigation = () => {
                         </li>
                         <li>
                             <Link
-                                to={'/portfolio'}
-                                onClick={() => { handleActiveItem('/portfolio') }}
-                                style={{ borderBottom: activeItem === '/portfolio' ? '4px solid #5FDC0C' : 'none' }}
+                                to={'/projects'}
+                                onClick={() => { handleActiveItem('/projects') }}
+                                style={{ borderBottom: activeItem === '/projects' ? '4px solid #5FDC0C' : 'none' }}
                                 data-cy="navPortfolioLink"
-                            >Portfolio
+                            >Projects
                             </Link>
                         </li>
                     </ul>

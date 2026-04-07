@@ -14,7 +14,7 @@ describe('Navigation bar', () => {
 
     test('render links', () => {
         expect(screen.getByText('Home')).toBeInTheDocument();
-        expect(screen.getByText('Portfolio')).toBeInTheDocument();
+        expect(screen.getByText('Projects')).toBeInTheDocument();
     });
 
     test('render correct ammount of links', () => {
@@ -25,7 +25,7 @@ describe('Navigation bar', () => {
         const links: HTMLAnchorElement[] = screen.getAllByRole("link");
 
         expect(links[0].href).toContain("/");
-        expect(links[1].href).toContain("/portfolio");
+        expect(links[1].href).toContain("/projects");
     });
 });
 
@@ -90,7 +90,7 @@ describe('Navigation is keyboard accessible', () => {
         await userEvent.tab();
         expect(screen.getByText('Home')).toHaveFocus();
         await userEvent.tab();
-        expect(screen.getByText('Portfolio')).toHaveFocus();
+        expect(screen.getByText('Projects')).toHaveFocus();
         await userEvent.keyboard('{Shift>}{Tab}{/Shift}');
         expect(screen.getByText('Home')).toHaveFocus();
     });

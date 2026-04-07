@@ -4,9 +4,9 @@ describe('Navigation', () => {
   it('navigate from home page to portfolio page and back', () => {
     cy.visit('/')
     cy.get('[data-cy="headerDiv"]').should('be.visible')
-    cy.contains('Portfolio').should('exist').click()
-    cy.url().should('contain', Cypress.config().baseUrl + '/portfolio')
-    cy.get('h1').should('contain', 'Portfolio')
+    cy.contains('Projects').should('exist').click()
+    cy.url().should('contain', Cypress.config().baseUrl + '/projects')
+    cy.get('h1').should('contain', 'Projects')
 
     cy.contains('Home').should('exist').click()
     cy.url().should('contain', Cypress.config().baseUrl + '/')
@@ -20,7 +20,7 @@ describe('Navigation', () => {
     cy.get('[data-cy="hamburger"]').should('have.attr', 'src', '/src/assets/hamburger.png').click()
     cy.get('nav').should('be.visible')
     cy.get('[data-cy="hamburger"]').should('have.attr', 'src', '/src/assets/close.png')
-    cy.contains('Portfolio').click()
+    cy.contains('Projects').click()
     cy.get('nav').should('not.be.visible')
   })
 
