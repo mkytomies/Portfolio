@@ -86,7 +86,7 @@
 }
 
 /*Large desktops*/
-@media only screen and (min-width: 1490px) {
+@media only screen and (min-width: 1550px) {
     .sidebar {
         margin: auto;
     }

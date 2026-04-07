@@ -8,7 +8,6 @@ const getLeftValue = (width: number) => {
     return '0';
 };
 
-
 const Sidebar = () => {
     const initialWidth = window.innerWidth;
 
