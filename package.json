@@ -12,7 +12,7 @@
     "test": "jest --config jest.config.ts",
     "predeploy": "npm run build",
     "start": "npm run open",
-    "open": "concurrently \"http-server -a localhost -p 5173\" \"open http://localhost:5173/Portfolio/dist\""
+    "open": "concurrently \"http-server -a localhost -p 5173\" \"open http://localhost:5173/Portfolio/\""
   },
   "dependencies": {
     "concurrently": "^9.2.1",
