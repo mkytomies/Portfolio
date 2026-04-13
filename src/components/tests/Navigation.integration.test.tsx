@@ -42,7 +42,7 @@ describe('Navigation', () => {
                 <LocationDisplay />
             </>
         );
-
+        
         expect(screen.getByTestId('location')).toHaveTextContent('/');
 
         const homeLink = screen.getByText('Home');

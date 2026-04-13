@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { useEffect, useState } from "react";
 import "./styles/Navigation.css";
 
@@ -6,11 +6,9 @@ import hamburger from '../assets/hamburger.png';
 import close from '../assets/close.png';
 
 const Navigation = () => {
-    const [activeItem, setActiveItem] = useState(window.location.pathname);
     const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false);
 
-    const handleActiveItem = (clickedItem: string) => {
-        setActiveItem(clickedItem);
+    const handleActiveItem = () => {
         setMobileNavIsOpen(false);
     };
 
@@ -39,22 +37,26 @@ const Navigation = () => {
                 <nav role="navigation" style={{visibility: mobileNavIsOpen || window.innerWidth > 600 ? 'visible' : 'hidden'}}>
                     <ul className="list">
                         <li>
-                            <Link
+                            <NavLink
                                 to={'/'}
-                                onClick={() => { handleActiveItem('/') }}
-                                style={{ borderBottom: activeItem === '/' ? '4px solid #5FDC0C' : 'none' }}
+                                onClick={() => { handleActiveItem() }}
+                                style={({ isActive }) => ({
+                                    borderBottom: isActive ? "4px solid #5FDC0C" : "none"
+                                })}
                                 data-cy="navHomeLink"
                             >Home
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link
+                            <NavLink
                                 to={'/projects'}
-                                onClick={() => { handleActiveItem('/projects') }}
-                                style={{ borderBottom: activeItem === '/projects' ? '4px solid #5FDC0C' : 'none' }}
+                                onClick={() => { handleActiveItem() }}
+                                style={({ isActive }) => ({
+                                    borderBottom: isActive ? "4px solid #5FDC0C" : "none"
+                                })}
                                 data-cy="navPortfolioLink"
                             >Projects
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
