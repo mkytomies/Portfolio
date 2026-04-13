@@ -23,5 +23,7 @@ jobs:
         - name: Cypress run
           uses: cypress-io/github-action@v7
           with: 
+            build: npm run build
+            start: npm start
             command: npx cypress run
             browser: edge
