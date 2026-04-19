@@ -1,86 +1,84 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #151515;
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #151515;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  min-height: 100vh;
+	margin: 0;
+	display: flex;
+	min-height: 100vh;
 }
 
 .mainContainer {
-  width: 55%;
-  padding: 4rem;
-  padding-right: 6vw;
-  position: absolute;
-  right: 0;
+	width: 55%;
+	padding: 4rem;
+	padding-right: 6vw;
+	position: absolute;
+	right: 0;
 }
 
 h1 {
-  color: #5FDC0C;
-  font-size: 60px;
-  text-align: right;
-  margin-bottom: 0;
+	color: #5fdc0c;
+	font-size: 60px;
+	text-align: right;
+	margin-bottom: 0;
 }
 
 h2 {
-  color: #5FDC0C;
-  font-size: 36px;
-  line-height: 36px;
-  padding-top: 2rem;
+	color: #5fdc0c;
+	font-size: 36px;
+	line-height: 36px;
+	padding-top: 2rem;
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 /*Mobile*/
 @media (max-width: 576px) {
-  h1 {
-    font-size: 32px;
-  }
+	h1 {
+		font-size: 32px;
+	}
 
-  h2 {
-    font-size: 28px;
-  }
+	h2 {
+		font-size: 28px;
+	}
 
-  .mainContainer {
-    width: 75%;
-    padding: 2rem;
-  }
+	.mainContainer {
+		width: 75%;
+		padding: 2rem;
+	}
 }
 
 /*Small tablets*/
 @media only screen and (min-width: 577px) and (max-width: 768px) {
-  .mainContainer {
-    width: 70%;
-  }
+	.mainContainer {
+		width: 70%;
+	}
 }
 
 /*Large tablets*/
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .mainContainer {
-      width: 52%;
-    }
+	.mainContainer {
+		width: 52%;
+	}
 }
 
 /*Small desktops*/
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
-    
 }
 
 /*Large desktops*/
 @media only screen and (min-width: 1441px) {
-    
 }

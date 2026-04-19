@@ -1,18 +1,17 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 4rem;
 }
 
 .homeButton {
-    background-color: #5FDC0C;
-    color: #FFF;
-    font-weight: 600;
-    text-align: center;
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-size: 1.1rem;
-
+	background-color: #5fdc0c;
+	color: #fff;
+	font-weight: 600;
+	text-align: center;
+	padding: 15px 30px;
+	border-radius: 30px;
+	font-size: 1.1rem;
 }

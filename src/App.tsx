@@ -1,36 +1,35 @@
-import { RouterProvider, createHashRouter } from "react-router";
-import Root from "./pages/Root";
-import Home from "./pages/Home";
-import Portfolio from "./pages/Portfolio";
+import { RouterProvider, createHashRouter } from 'react-router';
+import Root from './pages/Root';
+import Home from './pages/Home';
+import Portfolio from './pages/Portfolio';
 
 import './App.css';
-import ErrorPage from "./pages/ErrorPage";
+import ErrorPage from './pages/ErrorPage';
 
 const router = createHashRouter([
-  {
-    path: "/",
-    Component: Root,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        Component: Home,
-      },
-      {
-        path: "/projects",
-        Component: Portfolio,
-      }
-    ]
-  }
-])
+	{
+		path: '/',
+		Component: Root,
+		errorElement: <ErrorPage />,
+		children: [
+			{
+				index: true,
+				Component: Home,
+			},
+			{
+				path: '/projects',
+				Component: Portfolio,
+			},
+		],
+	},
+]);
 
 function App() {
-
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  )
+	return (
+		<>
+			<RouterProvider router={router} />
+		</>
+	);
 }
 
-export default App
+export default App;
