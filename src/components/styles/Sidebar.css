@@ -9,7 +9,6 @@
 }
 
 .sidebar {
-	overflow-y: auto;
 	padding-left: 5vw;
 }
 
@@ -84,16 +83,6 @@
 	}
 }
 
-/*Large desktops*/
-@media only screen and (min-width: 1550px) {
-	.sidebar {
-		margin: auto;
-	}
-}
-
-@media only screen and (min-width: 1200px) {
-}
-
 @media only screen and (min-width: 1025px) and (max-width: 1150px) {
 	.sidebarContainer {
 		width: 35%;
@@ -101,10 +90,6 @@
 }
 
 @media only screen and (max-width: 1024px) {
-	.sidebar {
-		margin: auto;
-	}
-
 	.arrow {
 		left: 100%;
 		top: 50%;

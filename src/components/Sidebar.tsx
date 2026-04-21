@@ -15,6 +15,9 @@ const Sidebar = () => {
 	const [sidebarOpen, setSidebarOpen] = useState(initialWidth > 768);
 	const [leftValue, setLeftValue] = useState(getLeftValue(initialWidth));
 
+	const [isOverflown, setIsOverflown] = useState(false);
+
+
 	useEffect(() => {
 		const handleWindowResize = () => {
 			const width = window.innerWidth;
@@ -23,7 +26,11 @@ const Sidebar = () => {
 			setIsMobile(mobile);
 			setLeftValue(getLeftValue(width));
 			setSidebarOpen(!mobile);
+			setIsOverflown(sidebar?.scrollHeight! > window.innerHeight ? true : false);
 		};
+
+		const sidebar = document.getElementById('sidebar');
+		setIsOverflown(sidebar?.scrollHeight! > window.innerHeight ? true : false);
 
 		window.addEventListener('resize', handleWindowResize);
 
@@ -43,13 +50,13 @@ const Sidebar = () => {
 				data-testid="sidebarContainer"
 				style={{ left: sidebarOpen ? 0 : leftValue }}
 			>
-				<div className="sidebar" data-testid="sidebar">
+				<div id='sidebar' className="sidebar" data-testid="sidebar" style={{ margin: isOverflown ? 0 : 'auto', overflowY: isOverflown ? 'scroll' : 'hidden' }}>
 					<div className="skillsColumn">
 						<h2>Skills</h2>
 						<p className="sidebarSmallTitle">Programming</p>
 						<p className="info">
 							Javascript | HTML | CSS | React Native | Flutter |
-							React | Python | Google Apps Script{' '}
+							React | Python | Google Apps Script
 						</p>
 
 						<p className="sidebarSmallTitle">
