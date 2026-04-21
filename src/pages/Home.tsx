@@ -18,12 +18,12 @@ const Home = () => {
 
 				<h2>Education</h2>
 				<p className="bolded">
-					Tampere University of Sciences | 2021 - Current{' '}
+					Tampere University of Applied Sciences | 2021 - Current{' '}
 				</p>
 				<p className="bodyText">Software Engineering </p>
 
 				<p className="bolded">
-					Tomas Bata University, Zlín, Czech Republic | 2024{' '}
+					Tomas Bata University, Zlín, Czech Republic | 2024
 				</p>
 				<p className="bodyText">
 					Software Engineering, Erasmus Program
@@ -34,12 +34,18 @@ const Home = () => {
 				<p className="bodyText">Intern</p>
 				<ul>
 					<li>
+						Participated in different projects creating online solutions
+					</li>
+					<li>
 						Created Google Forms → Google Sheets workflow to collect
 						event data to be shared between organizations
 					</li>
 					<li>
 						Built a Google App Script validation to restrict
 						submissions to approved users
+					</li>
+					<li>
+						Used Excel and Power Query to automate thesis seminar activity tracking
 					</li>
 				</ul>
 
@@ -49,7 +55,7 @@ const Home = () => {
 				<p className="bodyText">Media-Assistant, Intern & Part-time </p>
 				<ul>
 					<li>
-						Moved from graphic design into WordPress development
+						Moved from graphic design into WordPress development in October 2019
 						(Divi){' '}
 					</li>
 					<li>

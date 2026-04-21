@@ -55,21 +55,21 @@ const Sidebar = () => {
 						<h2>Skills</h2>
 						<p className="sidebarSmallTitle">Programming</p>
 						<p className="info">
-							Javascript | HTML | CSS | React Native | Flutter |
-							React | Python | Google Apps Script
+							TypeScript | Javascript | HTML | CSS | React Native | Flutter |
+							React | Jest | RTL | Cypress
 						</p>
 
 						<p className="sidebarSmallTitle">
 							Development, Design & CMS Tools
 						</p>
 						<p className="info">
-							Figma | WordPress | GitHub | Adobe Illustrator |
+							Figma | WordPress | GitHub | GitHub Actions | GitHub Pages | Adobe Illustrator |
 							Adobe Photoshop | Adobe InDesign
 						</p>
 
 						<p className="sidebarSmallTitle">Language</p>
 						<p className="info">
-							Finnish – First language <br /> English – B2/C1
+							Finnish – First language <br /> English – C1
 						</p>
 					</div>
 
