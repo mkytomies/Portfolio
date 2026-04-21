@@ -26,11 +26,11 @@ const Sidebar = () => {
 			setIsMobile(mobile);
 			setLeftValue(getLeftValue(width));
 			setSidebarOpen(!mobile);
-			setIsOverflown(sidebar?.scrollHeight! > window.innerHeight ? true : false);
+			setIsOverflown(sidebar?.scrollHeight ?? 1 > window.innerHeight ? true : false);
 		};
 
 		const sidebar = document.getElementById('sidebar');
-		setIsOverflown(sidebar?.scrollHeight! > window.innerHeight ? true : false);
+		setIsOverflown(sidebar?.scrollHeight ?? 1 > window.innerHeight ? true : false);
 
 		window.addEventListener('resize', handleWindowResize);
 
