@@ -1,0 +1,11 @@
+name: Main pipeline
+on: 
+    push:
+        branches:
+            - main
+jobs:
+    CI-Run: 
+        uses: ./.github/workflows/ci.yml
+    CD-run:
+        needs: CI-Run
+        uses: ./.github/workflows/cd.yml
