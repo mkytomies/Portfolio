@@ -125,11 +125,3 @@
 		padding-bottom: 1.5vw;
 	}
 }
-
-/*Small desktops*/
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-}
-
-/*Large desktops*/
-@media only screen and (min-width: 1441px) {
-}
