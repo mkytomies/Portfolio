@@ -6,11 +6,11 @@
   ],
   "compilerOptions": {
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "nodenext",
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "skipLibCheck": true,
     "types": [
       "node",
