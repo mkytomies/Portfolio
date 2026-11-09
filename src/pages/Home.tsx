@@ -18,7 +18,7 @@ const Home = () => {
 
 				<h2>Education</h2>
 				<p className="bolded">
-					Tampere University of Applied Sciences | 2021 - Current{' '}
+					Tampere University of Applied Sciences | 2021 - 2026{' '}
 				</p>
 				<p className="bodyText">Software Engineering </p>
 
